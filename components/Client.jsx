@@ -19,7 +19,7 @@ const Client = ({ id, name, email, phone, address, company, notes }) => {
             name={`edit ${name}`}
             className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
           >
-            <Link href="/edit/[id]" as={`/edit/${id}`}>
+            <Link to="/edit/[id]" as={`/edit/${id}`}>
               <FaRegEdit />
             </Link>
           </button>

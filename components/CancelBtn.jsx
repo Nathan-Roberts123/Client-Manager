@@ -6,7 +6,7 @@ const CancelBtn = () => (
     type="button"
     className="bg-gray-400 hover:bg-gray-600 text-black font-bold py-2 px-4 rounded"
   >
-    <Link href="/">
+    <Link to="/">
       <div>
         Cancel
         <span className="inline-block" style={{ height: '0.85em' }}>

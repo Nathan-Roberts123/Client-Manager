@@ -23,7 +23,7 @@ const Home = ({ clients }) => (
       </tbody>
     </table>
     <div className="text-center p-5">
-      <Link href="/add-client">
+      <Link to="/add-client">
         <button className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded text-2xl">
           <div>
             Add{' '}
