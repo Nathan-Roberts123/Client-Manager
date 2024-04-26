@@ -25,12 +25,12 @@ const Home = ({ clients }) => (
     <div className="text-center p-5">
       <Link href="/add-client">
         <button className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded text-2xl">
-          <a>
+          <div>
             Add{' '}
             <span className="inline-block" style={{ height: '0.85em' }}>
               <MdPersonAdd />
             </span>
-          </a>
+          </div>
         </button>
       </Link>
     </div>
