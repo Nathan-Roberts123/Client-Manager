@@ -23,7 +23,7 @@ const Edit = ({ data }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const res = await fetch(`${process.env.WEBURL}/api/update-client`, {
+    const res = await fetch('/api/update-client', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(client)
@@ -39,7 +39,7 @@ const Edit = ({ data }) => {
 
   const handleDelete = async e => {
     e.preventDefault()
-    const res = await fetch(`${process.env.WEBURL}/api/delete-client`, {
+    const res = await fetch('/api/delete-client', {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id: client.id, name: client.name })
