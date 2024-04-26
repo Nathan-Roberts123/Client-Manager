@@ -23,7 +23,7 @@ const Edit = ({ data }) => {
 
   const handleSubmit = async e => {
     e.preventDefault()
-    const res = await fetch('http://localhost:3000/api/update-client', {
+    const res = await fetch(`${process.env.MONGODB_URI}/api/update-client`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(client)
@@ -39,7 +39,7 @@ const Edit = ({ data }) => {
 
   const handleDelete = async e => {
     e.preventDefault()
-    const res = await fetch('http://localhost:3000/api/delete-client', {
+    const res = await fetch(`${process.env.MONGODB_URI}/api/delete-client`, {
       method: 'DELETE',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify({ id: client.id, name: client.name })
@@ -205,7 +205,7 @@ const Edit = ({ data }) => {
 
 Edit.getInitialProps = async function (context) {
   const { id } = context.query
-  const res = await fetch(`http://localhost:3000/api/get-client?id=${id}`)
+  const res = await fetch(`${process.env.MONGODB_URI}/api/get-client?id=${id}`)
   const data = await res.json()
 
   return { data: data.user }

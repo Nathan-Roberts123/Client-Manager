@@ -24,7 +24,7 @@ const Add = () => {
 
   const handleSubmit = async () => {
     event.preventDefault()
-    const res = await fetch('http://localhost:3000/api/add-client', {
+    const res = await fetch(`${process.env.MONGODB_URI}/api/add-client`, {
       method: 'POST',
       headers: { 'Content-Type': 'application/json' },
       body: JSON.stringify(newClient)
