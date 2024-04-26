@@ -41,7 +41,7 @@ const Home = ({ clients }) => (
 )
 
 Home.getInitialProps = async function () {
-  const res = await fetch(`${process.env.MONGODB_URI}/api/clients`)
+  const res = await fetch(`${process.env.WEBURL}/api/clients`)
   const data = await res.json()
 
   return {
