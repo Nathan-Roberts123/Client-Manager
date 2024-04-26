@@ -23,7 +23,7 @@ const Home = ({ clients }) => (
       </tbody>
     </table>
     <div className="text-center p-5">
-      <Link to="/add-client">
+      <Link href="/add-client">
         <button className="bg-green-700 hover:bg-green-900 text-white font-bold py-2 px-4 rounded text-2xl">
           <div>
             Add{' '}
@@ -41,7 +41,7 @@ const Home = ({ clients }) => (
 )
 
 Home.getInitialProps = async function () {
-  const res = await fetch(`${process.env.WEBURL}/api/clients`)
+  const res = await fetch(`${process.env.weburl}/api/clients`)
   const data = await res.json()
 
   return {

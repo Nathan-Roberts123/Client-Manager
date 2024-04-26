@@ -17,12 +17,12 @@ const Header = () => (
       <nav className="flex justify-between">
         {useRouter().pathname !== '/' && (
           <li className="self-center text-2xl hover:text-gray-500">
-            <Link to="/">Clients</Link>
+            <Link href="/">Clients</Link>
           </li>
         )}
         {useRouter().pathname !== '/add-client' && (
           <li className="self-center text-2xl hover:text-gray-500 ml-5">
-            <Link to="/add-client">Add Client</Link>
+            <Link href="/add-client">Add Client</Link>
           </li>
         )}
       </nav>
