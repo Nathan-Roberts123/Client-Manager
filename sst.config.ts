@@ -11,6 +11,10 @@ export default {
   stacks(app) {
     app.stack(function Site({ stack }) {
       const site = new NextjsSite(stack, "site", {
+        customDomain: {
+          domainName: 'nathancody.xyz',
+          domainAlias: 'www.nathancody.xyz'
+        },
         environment: {
           USERNAME: process.env.USERNAME ? process.env.USERNAME : '',
           MONGODB_URI: process.env.MONGODB_URI ? process.env.MONGODB_URI : '',
