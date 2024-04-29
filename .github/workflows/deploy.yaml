@@ -11,7 +11,7 @@ jobs:
     env:
       MONGODB_URI: ${{secrets.MONGODB_URI}}
       USERNAME: Paul
-      WEBURL: https://d11790256k2kgv.cloudfront.net
+      WEBURL: https://nathancody.xyz
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
