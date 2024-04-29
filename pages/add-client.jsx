@@ -72,6 +72,7 @@ const Add = () => {
                 value={newClient.name}
                 onChange={handleChange}
                 required={true}
+                data-cy="name-filed"
               />
             </label>
 
@@ -90,6 +91,7 @@ const Add = () => {
                 value={newClient.email}
                 onChange={handleChange}
                 required={true}
+                data-cy="email-filed"
               />
             </label>
 
@@ -108,6 +110,7 @@ const Add = () => {
                 value={newClient.phone}
                 onChange={handleChange}
                 required={true}
+                data-cy="phone-filed"
               />
             </label>
 
@@ -123,6 +126,7 @@ const Add = () => {
                 name="address"
                 value={newClient.address}
                 onChange={handleChange}
+                data-cy="address-filed"
               />
             </label>
 
@@ -138,6 +142,7 @@ const Add = () => {
                 name="company"
                 value={newClient.company}
                 onChange={handleChange}
+                data-cy="company-filed"
               />
             </label>
 
@@ -153,6 +158,7 @@ const Add = () => {
                 name="notes"
                 value={newClient.notes}
                 onChange={handleChange}
+                data-cy="notes-filed"
               />
             </label>
           </div>
