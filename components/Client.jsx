@@ -1,8 +1,10 @@
 import PropTypes from 'prop-types'
 import Link from 'next/link'
 import { FaRegEdit } from 'react-icons/fa'
+import { useRouter } from 'next/navigation'
 
 const Client = ({ id, name, email, phone, address, company, notes }) => {
+  const router = useRouter()
   return (
     <>
       <tr>
@@ -17,11 +19,12 @@ const Client = ({ id, name, email, phone, address, company, notes }) => {
         <td className="border px-4 py-2">
           <button
             name={`edit ${name}`}
+            onClick={() => {
+              router.push(`/edit/${id}`)
+            }}
             className="bg-orange-500 hover:bg-orange-700 text-white font-bold py-2 px-4 rounded"
           >
-            <Link href="/edit/[id]" as={`/edit/${id}`}>
-              <FaRegEdit />
-            </Link>
+            <FaRegEdit />
           </button>
         </td>
       </tr>
