@@ -9,9 +9,13 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      MONGODB_URI: ${{secrets.MONGODB_URI}}
-      USERNAME: Paul
-      WEBURL: https://nathancody.xyz
+      DATABASE_URL: ${{secrets.DATABASE_URL}}
+      NEXTAUTH_SECRET: ${{secrets.NEXTAUTH_SECRET}}
+      NEXTAUTH_URL: https://nathancody.xyz
+      GOOGLE_CLIENT_ID: ${{secrets.GOOGLE_CLIENT_ID}}
+      GOOGLE_CLIENT_SECRET: ${{secrets.GOOGLE_CLIENT_SECRET}}
+      NEXT_PUBLIC_WEBAPPURL: https://nathancody.xyz
+      NEXT_PUBLIC_NODE_ENV: production
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v1
