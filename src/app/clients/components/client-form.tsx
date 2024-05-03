@@ -92,7 +92,7 @@ const ClientForm = ({
                       )}
                     />
                   </div>
-                  <FormDescription className="col-span-5">
+                  <FormDescription className="md:col-span-5">
                     Client information.
                   </FormDescription>
                 </div>

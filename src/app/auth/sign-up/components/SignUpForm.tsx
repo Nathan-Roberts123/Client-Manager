@@ -19,7 +19,6 @@ import PasswordInput from "@/components/ui/password-input";
 import FormWrapper from "../../components/FormWrapper";
 import { env } from "@/lib/env";
 import { useRouter } from "next/navigation";
-import { signIn } from "next-auth/react";
 
 export function SignUpForm() {
   const { toast } = useToast();
@@ -46,26 +45,11 @@ export function SignUpForm() {
     if (res.ok) {
       const data = await res.json();
       toast({
-        title: "Registration success:",
-        description: <h3>User was created successfully</h3>,
+        title: "Registration was successfull:",
+        description: <h3>Please Login with your credentials</h3>,
       });
 
-      const resSignin = await signIn("credentials", {
-        email: data.email,
-        password: data.password,
-        callbackUrl: `${env.NEXT_PUBLIC_WEBAPPURL}`,
-        redirect: false,
-      });
-
-      if (!resSignin?.ok) {
-        toast({
-          variant: "destructive",
-          title: "Login failed:",
-          description: <h3>Could not login a user, check your credentials</h3>,
-        });
-      } else {
-        router.push("/");
-      }
+      router.push("/auth/sign-in");
     } else {
       toast({
         variant: "destructive",
