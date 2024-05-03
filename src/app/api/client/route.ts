@@ -1,4 +1,4 @@
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import { ZClient } from "@/lib/types";
 import { createClient, getClients } from "@/lib/services/client";
 import { getServerSession } from "next-auth";
@@ -23,7 +23,7 @@ export async function GET() {
   }
 }
 
-export async function POST(req: NextResponse) {
+export async function POST(req: NextRequest) {
   const session = await getServerSession(OPTIONS);
 
   if (!session) {

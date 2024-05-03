@@ -29,7 +29,7 @@ export async function GET(
 }
 
 export async function POST(
-  req: NextResponse,
+  req: NextRequest,
   { params }: { params: { clientId: string } }
 ) {
   const session = await getServerSession(OPTIONS);
