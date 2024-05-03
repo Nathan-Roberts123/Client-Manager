@@ -1,10 +1,13 @@
 import prisma from "../prisma";
 import { exclude, hashText } from "../utils";
-import { TUser } from "../types";
+import { TIdentityProvider, TUser } from "../types";
 
-export async function getUser(email: string) {
+export async function getUser(
+  email: string,
+  identityProvider: TIdentityProvider
+) {
   const user = await prisma.user.findUnique({
-    where: { email: email },
+    where: { email, identityProvider },
     select: {
       id: true,
       username: true,
@@ -24,7 +27,7 @@ export async function loginUserHandler({
   password: string;
 }): Promise<TUser> {
   try {
-    const user = await getUser(email);
+    const user = await getUser(email, "email");
     if (user && user.password === hashText(password)) {
       return exclude(user, ["password"]);
     } else {
@@ -38,7 +41,7 @@ export async function loginUserHandler({
 export async function createUserHandler(data: any) {
   try {
     const existingUser = await prisma.user.findUnique({
-      where: { email: data.email },
+      where: { email: data.email, identityProvider: "email" },
       select: {
         id: true,
       },

@@ -65,3 +65,7 @@ export const ZUser = z.object({
 });
 
 export type TUser = z.infer<typeof ZUser>;
+
+export const ZIdentityProvider = z.enum(["email", "google"]);
+
+export type TIdentityProvider = z.infer<typeof ZIdentityProvider>;

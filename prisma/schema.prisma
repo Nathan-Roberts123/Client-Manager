@@ -14,12 +14,18 @@ datasource db {
   url      = env("DATABASE_URL")
 }
 
+enum IndentityProvider {
+  email
+  google
+}
+
 model User {
-  id       String   @id @default(uuid()) @map("_id")
-  username String
-  email    String   @unique
-  password String?
-  clients  Client[]
+  id               String            @id @default(uuid()) @map("_id")
+  username         String
+  email            String            @unique
+  password         String?
+  clients          Client[]
+  identityProvider IndentityProvider @default(email)
 }
 
 model Client {

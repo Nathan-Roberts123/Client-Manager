@@ -50,7 +50,11 @@ const OPTIONS: NextAuthOptions = {
             const { email, sub, name: username } = profile;
 
             const existingUser = await prisma.user.findUnique({
-              where: { email: email, username: username },
+              where: {
+                email: email,
+                username: username,
+                identityProvider: "google",
+              },
               select: {
                 id: true,
               },
@@ -59,11 +63,21 @@ const OPTIONS: NextAuthOptions = {
             if (!existingUser) {
               if (email && username) {
                 await prisma.user.create({
-                  data: { id: sub, email, username },
+                  data: {
+                    id: sub,
+                    email,
+                    username,
+                    identityProvider: "google",
+                  },
                 });
               } else if (email) {
                 await prisma.user.create({
-                  data: { id: sub, email, username: "unknown" },
+                  data: {
+                    id: sub,
+                    email,
+                    username: "unknown",
+                    identityProvider: "google",
+                  },
                 });
               } else {
                 throw new Error("No email was found");
