@@ -1,61 +1,36 @@
-# Test a Next.js App with Cypress
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Video Lesson Outline:
+## Getting Started
 
-[# 1 - Application Overview](https://youtu.be/xIl-0ZTtOHY)
-
-[# 2 - Install Cypress and eslint-plugin-cypress](https://youtu.be/dkekN7rKF1Y)
-
-[# 3 - Configure Cypress.json File](https://youtu.be/smd5UQUq5Uc)
-
-[# 4 - Write Our First Test](https://youtu.be/TLjFmOpGjUU)
-
-[# 5 - Write Better Tests with Cypress Testing Library](https://youtu.be/a1SvfURYxTQ)
-
-[# 6 - Run Cypress in Multiple Browsers](https://youtu.be/z7s-acDceCs)
-
-[# 7 - Test The Client Flow ](https://youtu.be/RupBr0w-bAk)
-
-## Installing/Running the app
-
-### Create a .env file
-
-```
-USERNAME="name you want displayed in project here"
-MONGODB_URI="database creds here"
-```
+First, run the development server:
 
 ```bash
-yarn
+npm run dev
+# or
 yarn dev
+# or
+pnpm dev
+# or
+bun dev
 ```
 
-## Running Tests
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-```bash
-yarn cy:open
-```
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-### Formatting with Prettier
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-```bash
-yarn format
-```
+## Learn More
 
-## Technologies Used
+To learn more about Next.js, take a look at the following resources:
 
-[NextJS](https://nextjs.org/)
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-[Cypress-testing-library](https://testing-library.com/docs/cypress-testing-library/intro)
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-[Tailwindcss](https://tailwindcss.com/)
+## Deploy on Vercel
 
-[React-notifications-component](https://teodosii.github.io/react-notifications-component/)
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-[React-icons](https://github.com/react-icons/react-icons#readme)
-
-[Mongoose](https://mongoosejs.com/)
-
-[MongoDB Atlas](https://www.mongodb.com/cloud/atlas/)
-
-[Prettier](https://prettier.io/docs/en/install.html)
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
